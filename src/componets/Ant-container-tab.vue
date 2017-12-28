@@ -9,11 +9,9 @@
                 <!--background-color="#545c64"-->
                 <!--text-color="#fff"-->
                 <!--active-text-color="#ffd04b">-->
-            <router-link :to="'/user/'+$route.params.id+'/'+item" v-for="(item,index) in menus[$route.params.id - 1]">
-                <!--<el-menu-item index="index">-->
-                <div>{{item+'======='}}</div>
-                <!--</el-menu-item>-->
-            </router-link>
+        <div v-for="(item,index) in menus[$route.params.id - 1]" :key="index">
+            <router-link :to="'/user/'+$route.params.id+'/'+item" >{{item+'======='}}</router-link>
+        </div>
         <!--</el-menu>-->
     </div>
 </template>

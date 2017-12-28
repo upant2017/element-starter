@@ -1,14 +1,14 @@
 
 <script>
-    import con1 from './main/1.vue'
-    import con2 from './main/2.vue'
-    import con3 from './main/3.vue'
-    import cona from './main/a.vue'
-    import conb from './main/b.vue'
-    import conc from './main/c.vue'
-    import conA from './main/A.vue'
-    import conB from './main/B.vue'
-    import conC from './main/C.vue'
+    import con1 from './main/1-1.vue'
+    import con2 from './main/1-2.vue'
+    import con3 from './main/1-3.vue'
+    import cona from './main/2-1.vue'
+    import conb from './main/2-2.vue'
+    import conc from './main/2-3.vue'
+    import conA from './main/3-1.vue'
+    import conB from './main/3-2.vue'
+    import conC from './main/3-3.vue'
     export default {
         data(){
             return{
