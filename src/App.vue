@@ -7,76 +7,30 @@
       </el-header>
       <el-container class="ant-left-width-back">
         <!--左侧 -->
-        <el-aside :width="asideWidth+'px'">
+          <el-aside :width="asideWidth+'px'" >
 
-          <!--<scrollbar :styles="scrollbar">-->
-          <antscrollbar>
-          <el-menu
-                  default-active="2"
-                  class="el-menu-vertical-demo"
-                  @open="handleOpen"
-                  @close="handleClose"
-                  background-color="#3c3c3c"
-                  text-color="#fff"
-                  active-text-color="#ffd04b">
-            <el-submenu index="1">
-              <template slot="title">
-                <i class="el-icon-location"></i>
-                <span>导航一</span>
-              </template>
-              <el-menu-item-group>
-                <template slot="title">分组一</template>
-                <el-menu-item index="1-1">选项1</el-menu-item>
-                <el-menu-item index="1-2">选项2</el-menu-item>
-              </el-menu-item-group>
-              <el-menu-item-group title="分组2">
-                <el-menu-item index="1-3">选项3</el-menu-item>
-              </el-menu-item-group>
-              <el-submenu index="1-4">
-                <template slot="title">选项4</template>
-                <el-menu-item index="1-4-1">选项1</el-menu-item>
-              </el-submenu>
-            </el-submenu>
-            <el-menu-item index="2">
-              <i class="el-icon-menu"></i>
-              <span slot="title">导航二</span>
-            </el-menu-item>
-            <el-menu-item index="3">
-              <i class="el-icon-setting"></i>
-              <span slot="title">导航三</span>
-            </el-menu-item>
-          </el-menu>
-          </antscrollbar>
-          <!--</scrollbar>-->
-        </el-aside>
+            <!--<scrollbar :styles="scrollbar">-->
+            <antscrollbar>
+              <anttabmenu></anttabmenu>
+            </antscrollbar>
+            <!--</scrollbar>-->
+          </el-aside>
+
         <antspan @dargx="fdargx"></antspan>
         <!--右侧 -->
         <el-container>
           <!--右上侧 -->
           <el-main>
               <!--<scrollbar :styles="scrollbar">-->
-              <antscrollbar>
+
                 <div>
-                  <span>aaaaaaaaqqqqqqqqqqqqqqqaa</span>
-                  <p>aaaaaaaaaqqqqqqqqqqqqqqqqqqqqqqqqq1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111qqqqqqqqqqqqqqqqqqqaa</p><p>main</p>
-                  <p>main</p><p>main</p>
-                  <p>main</p><p>main</p>
-                  <p>main</p><p>main</p>
-                  <p>main</p><p>main</p>
-                  <p>main</p><p>main</p>
-                  <p>main</p><p>main</p>
-                  <p>main</p><p>main</p>
-                  <p>main</p><p>main</p>
-                  <p>main</p><p>main</p>
-                  <p>main</p><p>main</p>
-                  <p>main</p><p>111111111111111111111111111</p>
+                  <router-view class="view two" name="a"></router-view>
                 </div>
-              </antscrollbar>
+
               <!--</scrollbar>-->
           </el-main>
           <!--右下侧 -->
           <el-footer>
-            Footer
           </el-footer>
         </el-container>
       </el-container>
@@ -85,10 +39,13 @@
 </template>
 
 <script>
-  import antspan from './antResizer.vue'
+  import antspan from './componets/Ant-Resizer.vue'
   import scrollbar from './componets/vue-scrollbar.vue'
   import antscrollbar from './componets/Ant-scrollbar.vue'
-  require("./css/vue2-scrollbar.css")
+  import anttabmenu from './componets/Ant-tab-menu.vue'
+
+  require("./css/vue2-scrollbar.css");
+
 export default {
   methods: {
     startHacking () {
@@ -123,7 +80,10 @@ export default {
     }
   },
   components:{
-    antspan, scrollbar,antscrollbar
+    antspan, scrollbar,antscrollbar,anttabmenu
+  },
+  computed:{
+
   },
   mounted: function () {
     this.$nextTick(function () {

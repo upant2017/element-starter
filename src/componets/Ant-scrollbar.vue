@@ -1,13 +1,15 @@
 <template>
-    <div class="ant-scrollbar-main" @wheel = "onWheel">
+    <div class="ant-scrollbar-main">
         <div class="ant-scrollbar-main-move"
              ref="scrollArea"
+             @wheel = "onWheel"
              :style="{
                marginTop:top*-1+'px',
                marginLeft:left*-1+'px'
              }">
-
-            <slot></slot>
+            <div>
+                <slot></slot>
+            </div>
         </div>
 
         <div class="ant-scrollbar-height" v-if="scrheight<100" @click="onJump($event,1)"
@@ -57,6 +59,7 @@
         methods:{
             init(){
                 let rs = this.getSize();
+               // console.log(rs);
                 this.scrheight = rs.offHeight / rs.scrHeight * 100;
                 this.scrwidth = rs.offWidth / rs.scrWidth * 100;
                 this.updatas();
@@ -74,11 +77,12 @@
                 let scrollWrapper = this.$el;
                 let scrollArea = this.$refs.scrollArea;
                 let retSize = {
-                    scrHeight : scrollArea.scrollHeight,
-                    scrWidth : scrollArea.scrollWidth,
+                    scrHeight : scrollArea.children[0].scrollHeight,
+                    scrWidth : scrollArea.children[0].scrollWidth,
                     offHeight : scrollWrapper.clientHeight,
                     offWidth :  scrollWrapper.clientWidth
                 };
+                //console.log(retSize);
                 return retSize;
             },
             onWheel(e){
@@ -210,6 +214,11 @@
     }
     .ant-scrollbar-main-move{
         background: transparent;
+    }
+    .ant-scrollbar-main-move>div{
+        width: 100%;
+        height: 100%;
+        position: absolute;
     }
     /**
     滚动条公共样式

@@ -277,6 +277,8 @@
           scrollWrapperHeight: $scrollWrapper.clientHeight,
           scrollWrapperWidth: $scrollWrapper.clientWidth,
         }
+          console.log($scrollArea);
+          console.log(elementSize);
           return elementSize
       },
 

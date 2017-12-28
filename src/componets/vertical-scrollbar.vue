@@ -140,7 +140,7 @@
         // The Elements
         let $scrollArea = this.$refs.container.parentElement
         let $scrollWrapper = $scrollArea.parentElement
-
+          console.log($scrollArea.children[0]);
         // Get new Elements Size
         let elementSize = {
           // Scroll Area Height and Width
@@ -151,6 +151,7 @@
           scrollWrapperHeight: $scrollWrapper.clientHeight,
           scrollWrapperWidth: $scrollWrapper.clientWidth,
         }
+          console.log(elementSize);
           return elementSize
       },
 
