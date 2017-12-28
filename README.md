@@ -52,7 +52,7 @@ const router = new VueRouter({
             }
         },
         {
-            path: '/user,
+            path: '/user',
             component: Acomponent       //单路由不带s
         }
     ]
