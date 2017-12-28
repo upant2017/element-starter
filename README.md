@@ -45,7 +45,7 @@ const router = new VueRouter({
             redirect:'/user'
         },
         {
-            path: '/user,
+            path: '/user',
             components: {               //多个路由要带s
                 default: Acomponent,
                 a:Bcomponent
