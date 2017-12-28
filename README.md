@@ -32,9 +32,53 @@ npm run build
 ```
 ## 笔记
 
-``` js
+``` vue
+    在组件中使用 render 函数时 不写<template>就行了.
+    因为<template>最终会边编译为render函数执行
+```
+``` vue
+const router = new VueRouter({
+    mode: 'history',
+    routes: [                           //路由配置中的名字是 routes **重点**
+        {
+            path: '/',
+            redirect:'/user'
+        },
+        {
+            path: '/user,
+            components: {               //多个路由要带s
+                default: Acomponent,
+                a:Bcomponent
+            }
+        },
+        {
+            path: '/user,
+            component: Acomponent       //单路由不带s
+        }
+    ]
+})
+``` vue
 new Vue({
   el: '#app',
-  router,   //必须加载路由配置后 组件中才能使用路由组件
+  router,                       //组件名是 router . 必须加载路由配置后 组件中才能使用路由组件.
   render: h => h(App)
 });
+```
+``` vue
+ vue关键字带s
+    methods     //函数
+    components  //组件
+ vue关键字不带s
+    computed    //计算值
+    mounted     //初始化后执行函数
+```
+
+``` vue
+    export default {
+        data() {
+            return{     //必须带 return 函数体,否则会报错
+
+            }
+        }
+    }
+```
