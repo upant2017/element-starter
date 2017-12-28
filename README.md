@@ -30,3 +30,11 @@ npm run dev
 # build for production with minification
 npm run build
 ```
+## 笔记
+
+``` js
+new Vue({
+  el: '#app',
+  router,   //必须加载路由配置后 组件中才能使用路由组件
+  render: h => h(App)
+});
