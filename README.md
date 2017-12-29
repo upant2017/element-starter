@@ -82,3 +82,26 @@ new Vue({
         }
     }
 ```
+``` js
+    watch监听
+
+    props:['show'],
+    watch: {
+        show(val){
+            //show 改变时执行
+        }
+    }
+```
+``` js
+计算值的妙用: 可以绑定参数做到与参数同步,还可以用来更新父组件的参数..比 watch 方法方便
+    computed:{
+        showDialog:{
+            get(){
+                return this.show;
+            },
+            set(val){
+                this.$emit('showoff', val);//更新父组件的参数
+            }
+        }
+    }
+```

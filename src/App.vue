@@ -88,7 +88,7 @@ export default {
   mounted: function () {
     this.$nextTick(function () {
         window.addEventListener('resize', this.windsize);
-        this.allWidth = window.innerHeight;
+        this.windsize();
     })
   }
 }

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import VueResource from 'vue-resource'
 import ElementUI from 'element-ui'
 import './css/element-theme.scss'
 import App from './App.vue'
@@ -9,6 +10,7 @@ import Antcontainermain from './componets/Ant-container-main.vue'
 //import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.use(VueRouter);
+Vue.use(VueResource);
 Vue.use(ElementUI);
 
 // const router = new VueRouter({

@@ -50,6 +50,10 @@ module.exports = (options = {}) => ({
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
+    }),
+    new HtmlWebpackPlugin({
+        filename: 'json',
+        template: 'src/json/datas.html'
     })
   ],
   resolve: {
