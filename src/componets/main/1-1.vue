@@ -1,7 +1,5 @@
 <template>
     <div>
-        <el-button @click="getDatas">获取数据</el-button>
-        <img :src="imgadd" alt="">
         <el-table
                 v-loading="loading"
                 v-if="datas"
@@ -23,7 +21,7 @@
                     label="地址">
             </el-table-column>
         </el-table>
-        <div class="block">
+        <div class="el-pagination-block">
             <el-pagination @current-change="nextPage"
                     background
                     layout="prev, pager, next"
@@ -69,5 +67,7 @@
 </script>
 
 <style>
-
+    .el-pagination-block{
+        text-align: center;
+    }
 </style>

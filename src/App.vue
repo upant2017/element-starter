@@ -3,7 +3,7 @@
     <el-container class="all-app-main" :style="'height:'+allWidth+'px'">
       <el-header>
         <!--头部 -->
-        <i class="el-icon-back"></i>Header
+        <i class="el-icon-back"></i>顶部
       </el-header>
       <el-container class="ant-left-width-back">
         <!--左侧 -->
@@ -22,15 +22,14 @@
           <!--右上侧 -->
           <el-main>
               <!--<scrollbar :styles="scrollbar">-->
-
-                <div>
-                  <router-view class="view two" name="a"></router-view>
-                </div>
-
+            <antscrollbar>
+              <router-view class="view two" name="a"></router-view>
+            </antscrollbar>
               <!--</scrollbar>-->
           </el-main>
           <!--右下侧 -->
           <el-footer>
+            底部
           </el-footer>
         </el-container>
       </el-container>
@@ -111,7 +110,7 @@ export default {
   .el-main{
     background: #2b2b2b;
     color: #bbbbba;
-    padding: 20px 0 0 20px;
+    padding: 0;
   }
   .el-menu{
     border: 0px;

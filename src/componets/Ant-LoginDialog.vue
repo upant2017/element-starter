@@ -1,19 +1,16 @@
 <template>
-    <el-dialog title="收货地址" :visible.sync="showdialog">
+    <el-dialog title="用户登录" :visible.sync="showdialog" :width="fwidth" center>
         <el-form :model="form">
-            <el-form-item label="活动名称" :label-width="formLabelWidth">
-                <el-input v-model="form.name" auto-complete="off"></el-input>
+            <el-form-item label="用户名:" :label-width="formLabelWidth">
+                <el-input v-model="form.name" placeholder="请输用户名" clearable></el-input>
             </el-form-item>
-            <el-form-item label="活动区域" :label-width="formLabelWidth">
-                <el-select v-model="form.region" placeholder="请选择活动区域">
-                    <el-option label="区域一" value="shanghai"></el-option>
-                    <el-option label="区域二" value="beijing"></el-option>
-                </el-select>
+            <el-form-item label="密 码:" :label-width="formLabelWidth">
+                <el-input type="password" v-model="form.pass" auto-complete="off"></el-input>
             </el-form-item>
         </el-form>
-        <div slot="footer" class="dialog-footer">
+        <div slot="footer">
+            <el-button type="primary" @click="onclick">登 录</el-button>
             <el-button @click="onclick">取 消</el-button>
-            <el-button type="primary" @click="onclick">确 定</el-button>
         </div>
     </el-dialog>
 </template>
@@ -25,15 +22,10 @@
             return {
                 form: {
                     name: '',
-                    region: '',
-                    date1: '',
-                    date2: '',
-                    delivery: false,
-                    type: [],
-                    resource: '',
-                    desc: ''
+                    pass: ''
                 },
-                formLabelWidth: '120px'
+                formLabelWidth: '60px',
+                fwidth:'400px'
             }
         },
         computed:{
@@ -55,5 +47,4 @@
 </script>
 
 <style>
-
 </style>
